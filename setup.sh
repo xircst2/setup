@@ -4,7 +4,7 @@
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
-sudo apt-get install -y git-core
+sudo apt-get install -y git-core tmux
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
@@ -27,17 +27,14 @@ sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 
 # git pull and install dotfiles as well
-cd $HOME
-if [ -d ./dotfiles/ ]; then
-    mv dotfiles dotfiles.old
-fi
-if [ -d .emacs.d/ ]; then
-    mv .emacs.d .emacs.d~
-fi
-git clone https://github.com/startup-class/dotfiles.git
-ln -sb dotfiles/.screenrc .
+cd
+command rm -rf .dotfiles
+command rm -rf .emacs.d
+git clone git@github.com:xircst2/dotfiles.git
+ln -sb dotfiles/.vimrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
-
+ln -snf dotfiles/.vim
+ln -snf dotfiles/.tmux.conf
+ln -snf dotfiles/.gitconfig
