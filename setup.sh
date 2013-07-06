@@ -31,10 +31,12 @@ cd
 command rm -rf .dotfiles
 command rm -rf .emacs.d
 git clone git@github.com:xircst2/dotfiles.git
-ln -sb dotfiles/.vimrc .
-ln -sb dotfiles/.bash_profile .
-ln -sb dotfiles/.bashrc .
-ln -sf dotfiles/.emacs.d .
+ln -snf dotfiles/.vimrc .
+ln -snf dotfiles/.bash_profile .
+ln -snf dotfiles/.bashrc .
+ln -snf dotfiles/.emacs.d .
 ln -snf dotfiles/.vim
 ln -snf dotfiles/.tmux.conf
 ln -snf dotfiles/.gitconfig
+ln -snf dotfiles/.inputrc
+ln -snf dotfiles/.dir_colors
