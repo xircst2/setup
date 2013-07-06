@@ -40,3 +40,11 @@ ln -snf dotfiles/.tmux.conf
 ln -snf dotfiles/.gitconfig
 ln -snf dotfiles/.inputrc
 ln -snf dotfiles/.dir_colors
+git clone git@github.com:xircst2/bitstarter.git
+wget -q0- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+cd
+cd bitstarter
+git remote add heroku git@heroku.com:whispering-harbor-1333.git
+npm install restler commander cheerio
+cd
+wget https://spark-public.s3.amazonaws.com/startup/code/market-research.js
